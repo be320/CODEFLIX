@@ -1,0 +1,493 @@
+//Custom Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//Login Main Container
+.login {
+  width: 27em;
+  height: 50em;
+  //min-height: 44em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  position: relative;
+  z-index: 99;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+    border-radius: 4px;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    padding: 17px 10px;
+    //transition: transform 200ms ease-in-out;
+  }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    background-color: #78000c;
+    width: 100%;
+    position: absolute;
+    right: -34%;
+    border-radius: 6px;
+    z-index: 1;
+    transition: all 400ms ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+
+    &.right {
+      right: -40%;
+      align-items: flex-end;
+      &:hover {
+        right: -45%;
+      }
+    }
+    &.left {
+      right: 40%;
+      align-items: flex-start;
+      &:hover {
+        right: 45%;
+      }
+    }
+
+    .text {
+      font-size: 21px;
+      font-weight: 500;
+      color: #fff;
+      margin-right: 3em;
+      margin-left: 3em;
+    }
+  }
+}
+
+
+
+//Button
+.btn {
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: #8f0110;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #78000c;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.switchBtn {
+  margin-bottom: 50px;
+  margin-top: 0px;
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: #8f0110;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #78000c;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.youtube{
+  display: flex;
+  flex-direction: row;
+  margin:20px;
+
+}
+
+.videoList{
+ margin: 30px;
+
+}
+
+.dashboard{
+  display: flex;
+  flex-direction: column;
+
+  .search{
+    align-self: center;
+    width: 70%;
+    
+    
+  }
+
+.courses{
+  margin:20px;
+  display: flex;
+  flex-direction: row;
+
+  button{
+    margin-top: 60px;
+  }
+}
+}
+
+.card{
+  margin:20px;
+ 
+}
+
+.card-body{
+  background-color: rgba(156, 5, 20, 0.8);
+  color: #ffffff;
+  
+    }
+
+    .base-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    
+      .header {
+        font-size: 24px;
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .headLabel{
+          font-size: 25px;
+          color: #78000c;
+        }
+        
+        .image {
+          margin-top: 40px;
+          width: 21em;
+    
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+    
+        .form {
+          margin-top: 2em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+    
+          .calender{
+    
+            label {
+              font-size: 20px;
+              color: #78000c;
+              align-self:  flex-start;
+              margin-right: 40px;
+             
+            }
+          }
+    
+          .gender{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5px;
+    
+            
+            .title {
+              font-size: 20px;      
+              color: #78000c;
+              align-self:  flex-start;
+              margin-right: 25px;
+              margin-top: 6px;
+            }
+    
+            .radio{
+              font-size: 20px;
+              color: #78000c;
+              align-self:  flex-start;
+              margin-right: 25px;
+              
+            }
+    
+           
+          }
+    
+    .uploadImage{
+      margin-top: 1em;
+      margin-bottom: 1em;
+      label {
+        font-size: 20px;
+        color: #78000c;
+        align-self:  flex-start;
+        margin-left: 20px;
+       
+      }
+    
+      .fileBtn{
+        width: 17em;
+        margin-left: 10px;
+    font-size: 10px;
+    padding: 5px 20px;
+    border: 0;
+    background-color: #8f0110;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+    background-color: #78000c;
+    }
+    &:focus {
+    outline: none;
+    }
+      }
+    }
+    
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            .tutorialsNumber{
+            justify-content: space-between;
+            margin-left: 65px;
+           Button{
+             align-self: center
+           }
+            input{
+              margin-top: 6px;
+              height: 37px;
+              padding: 0px 10px;
+              font-size: 16px;
+              font-family: "Open Sans", sans-serif;
+              background-color: #f3f3f3;
+              border: 0;
+              border-radius: 4px;
+              margin-bottom: 5px;
+              transition: all 250ms ease-in-out;
+              &:hover {
+                //background-color: #ffffff;
+                //box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+              }
+    
+              &:focus {
+                outline: none;
+                box-shadow: 0px 0px 12px 0.8px #78000c;
+              }
+            }
+            }
+            label {
+              font-size: 20px;
+              color: #78000c;
+            }
+            input {
+              margin-top: 6px;
+              //min-width: 18em;
+              height: 37px;
+              padding: 0px 10px;
+              font-size: 16px;
+              font-family: "Open Sans", sans-serif;
+              background-color: #f3f3f3;
+              border: 0;
+              border-radius: 4px;
+              margin-bottom: 5px;
+              transition: all 250ms ease-in-out;
+              &:hover {
+                //background-color: #ffffff;
+                //box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+              }
+    
+              &:focus {
+                outline: none;
+                box-shadow: 0px 0px 12px 0.8px #78000c;
+              }
+            }
+          }
+        }
+      }
+    
+      .footer {
+        margin-top: 3em;
+      }
+    }
+    
+
+
+
+
+    .courseData {
+      width: 27em;
+      height: 50em;
+      //min-height: 44em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px;
+      position: relative;
+      z-index: 99;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+        border-radius: 4px;
+        position: relative;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        padding: 17px 10px;
+        //transition: transform 200ms ease-in-out;
+      }
+     
+    }
+
+
+
+    .tutorialsForm {
+      width: 50em;
+      // height: 50em;
+      //min-height: 44em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px;
+      position: relative;
+      z-index: 99;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+        border-radius: 4px;
+        position: relative;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        padding: 17px 10px;
+       
+        .text {
+          font-size: 21px;
+          font-weight: 500;
+          color: #fff;
+          margin-right: 3em;
+          margin-left: 3em;
+        }
+        .label{
+          align-self: center;
+        }
+       
+        .tutBottom{
+          display: flex;
+          flex-direction: row;      
+          justify-content: space-between;
+        }
+
+    .tutorials{
+      width: 500px;
+      display: flex;
+      flex-direction: row;      
+      justify-content: space-between;
+      align-items: baseline;
+      .tutNumber{
+        font-size: 17px;
+        color: #78000c;
+      }
+
+      .videoTitle{
+        width:60%;
+        margin-top: 6px;
+        height: 37px;
+        padding: 0px 10px;
+        font-size: 12px;
+        font-family: "Open Sans", sans-serif;
+        background-color: #f3f3f3;
+        border: 0;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        transition: all 250ms ease-in-out;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 12px 0.8px #78000c;
+        }
+      }
+      .videoId{
+        width: 25%;
+        margin-top: 6px;
+        height: 37px;
+        padding: 0px 10px;
+        font-size: 12px;
+        font-family: "Open Sans", sans-serif;
+        background-color: #f3f3f3;
+        border: 0;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        transition: all 250ms ease-in-out;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 12px 0.8px #78000c;
+        }
+      }
+    }
+      }
+    }

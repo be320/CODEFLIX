@@ -1,0 +1,145 @@
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  .header {
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .headLabel{
+      font-size: 25px;
+      color: #78000c;
+    }
+    .image {
+      margin-top: 40px;
+      width: 21em;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .form {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .calender{
+
+        label {
+          font-size: 20px;
+          color: #78000c;
+          align-self:  flex-start;
+          margin-right: 40px;
+         
+        }
+      }
+
+      .gender{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+
+        
+        .title {
+          font-size: 20px;      
+          color: #78000c;
+          align-self:  flex-start;
+          margin-right: 25px;
+          margin-top: 6px;
+        }
+
+        .radio{
+          font-size: 20px;
+          color: #78000c;
+          align-self:  flex-start;
+          margin-right: 25px;
+          
+        }
+
+       
+      }
+
+.uploadImage{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  label {
+    font-size: 20px;
+    color: #78000c;
+    align-self:  flex-start;
+    margin-left: 20px;
+   
+  }
+
+  .fileBtn{
+    width: 17em;
+    margin-left: 10px;
+font-size: 10px;
+padding: 5px 20px;
+border: 0;
+background-color: #8f0110;
+color: #fff;
+border-radius: 3px;
+transition: all 250ms ease-in-out;
+cursor: pointer;
+&:hover {
+background-color: #78000c;
+}
+&:focus {
+outline: none;
+}
+  }
+}
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        label {
+          font-size: 20px;
+          color: #78000c;
+        }
+        input {
+          margin-top: 6px;
+          min-width: 18em;
+          height: 37px;
+          padding: 0px 10px;
+          font-size: 16px;
+          font-family: "Open Sans", sans-serif;
+          background-color: #f3f3f3;
+          border: 0;
+          border-radius: 4px;
+          margin-bottom: 5px;
+          transition: all 250ms ease-in-out;
+          &:hover {
+            //background-color: #ffffff;
+            //box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+          }
+
+          &:focus {
+            outline: none;
+            box-shadow: 0px 0px 12px 0.8px #78000c;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 3em;
+  }
+}
