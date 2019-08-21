@@ -73,11 +73,15 @@ export class Register extends React.Component {
 
   onChange = date => this.setState({ date })
 
+  componentDidMount(){
+    this.setState({ redirectToReferrer: false })
+   }
 
   render() {
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
+    
       return (
         <Redirect to="/dashboard" />
       )

@@ -3,7 +3,7 @@ import { Button, List } from 'semantic-ui-react';
 import axios from 'axios';
 import { Link ,Redirect } from 'react-router-dom';
 
-//const Confirmation =(props) => {
+
 
 export class Confirmation extends React.Component{
 
@@ -27,7 +27,7 @@ export class Confirmation extends React.Component{
     }
 
 async componentDidMount(){
-
+    this.setState({ redirectToReferrer: false })
  const response = await axios.get('http://localhost:8080/api/downloadFiles')
  const last = response.data.length
  const image = response.data[last-1]
@@ -106,6 +106,7 @@ async componentDidMount(){
      render(){
         const { redirectToReferrer } = this.state;
         if (redirectToReferrer) {
+         
             return (
               <Redirect to="/success" />
             )

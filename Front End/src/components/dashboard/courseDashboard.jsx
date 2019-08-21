@@ -7,7 +7,7 @@ import base64 from 'react-native-base64'
 import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 var Rating = require('react-rating');
 
 
@@ -21,8 +21,11 @@ constructor(props)
   this.state= {
     courses : [],
     course : {},
-    source : null
+    source : null,
+    paramId: 119,
+    redirectToReferrer: false
   }
+  this.showDetails = this.showDetails.bind(this)
 }
 
 async componentDidMount(){
@@ -32,13 +35,27 @@ async componentDidMount(){
  this.setState({courses: courses })
 }
 
+showDetails = id => {
+
+  this.setState({ 
+  redirectToReferrer: true ,
+  paramId: id })
+}
 
 
     render(){
-      const { courses } = this.state; 
+      const { courses , redirectToReferrer ,paramId } = this.state; 
+
+      if(redirectToReferrer)
+      {
+      
+        return (
+          <Redirect to={`/course/${paramId}` } />
+        )
+      }
+      else{
         return( 
 <div className="dashboard">
-
 <div className= "courses">
 <div className = "search">
 <MuiThemeProvider>
@@ -60,8 +77,8 @@ async componentDidMount(){
 <div className= "courses">
   {
            courses.map( course =>   
-<Link to={`/course/${course.id}`} style={{ textDecoration: 'none' }} key = {course.id}> 
-<Card style={{ width: '18rem' , height: '25rem' ,  cursor: "pointer" }}  tag="a" >
+
+<Card style={{ width: '18rem' , minWidth: '18rem' , height: '25rem' ,  cursor: "pointer" , textDecoration: 'none' }}  key = {course.id}  tag="a" onClick={()=> this.showDetails(course.id)}>
  <Card.Img  style={{ width: '100%' , height: '50%'}} variant="top" src={'data:image/*;base64, '+course.imageUrl.data }/>
  <Card.Body className="card-body">
    <Card.Title>{course.title}</Card.Title>
@@ -73,11 +90,11 @@ async componentDidMount(){
   
  </Card.Footer>
 </Card>
-</Link>
            )
  }
            </div>
            </div> 
         )
+}
     }
 }
