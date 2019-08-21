@@ -20,7 +20,7 @@ export class TutorialsData extends React.Component{
     
       }
 
-    saveAndContinue = (e) => {
+    saveAndContinue =async (e) => {
         e.preventDefault()
         this.props.callbackFromParent(this.state.tutorials)
         this.props.nextStep()

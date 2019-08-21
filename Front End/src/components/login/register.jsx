@@ -5,10 +5,8 @@ import DatePicker from 'react-date-picker';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Link } from 'react-router-dom';
+import {Link , Redirect} from 'react-router-dom';
 var md5 = require('md5');
-
-
 
 export class Register extends React.Component {
 
@@ -20,6 +18,7 @@ export class Register extends React.Component {
       gender: '',
       birthDate: new Date(),
       imageUrl: '',
+      redirectToReferrer: false
     }
    
    
@@ -49,6 +48,7 @@ export class Register extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
 
+  
     var student = {
       name: this.state.name,
       email: this.state.email,
@@ -65,12 +65,23 @@ export class Register extends React.Component {
    .catch(error => {
     console.log(error)
    })
+
+    this.setState({ redirectToReferrer: true })
+  
     
   }
 
   onChange = date => this.setState({ date })
 
+
   render() {
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer) {
+      return (
+        <Redirect to="/dashboard" />
+      )
+    }
     return (
       <form onSubmit={this.handleSubmit}>
       <div className="base-container" ref={this.props.containerRef}>
@@ -126,7 +137,8 @@ export class Register extends React.Component {
 </button>
 </div>
 
-<Link to="/dashboard"> <button type="submit" className="btn" onClick={this.onSubmit}> Register </button> </Link>
+
+ <button  type="submit" className="btn" > Register </button> 
 
           </div>  
         </div>
@@ -138,3 +150,5 @@ export class Register extends React.Component {
     );
   }
 }
+
+

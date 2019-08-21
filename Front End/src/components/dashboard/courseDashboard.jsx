@@ -60,8 +60,8 @@ async componentDidMount(){
 <div className= "courses">
   {
            courses.map( course =>   
-<Link to={`/course/${course.id}`} style={{ textDecoration: 'none' }}> 
-<Card style={{ width: '18rem' , height: '25rem' ,  cursor: "pointer" }}  tag="a" key = {course.id}>
+<Link to={`/course/${course.id}`} style={{ textDecoration: 'none' }} key = {course.id}> 
+<Card style={{ width: '18rem' , height: '25rem' ,  cursor: "pointer" }}  tag="a" >
  <Card.Img  style={{ width: '100%' , height: '50%'}} variant="top" src={'data:image/*;base64, '+course.imageUrl.data }/>
  <Card.Body className="card-body">
    <Card.Title>{course.title}</Card.Title>

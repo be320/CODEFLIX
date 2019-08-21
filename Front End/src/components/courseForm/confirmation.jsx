@@ -1,7 +1,7 @@
 import React, { Component , useState } from 'react';
 import { Button, List } from 'semantic-ui-react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link ,Redirect } from 'react-router-dom';
 
 //const Confirmation =(props) => {
 
@@ -21,7 +21,8 @@ export class Confirmation extends React.Component{
           tutorials: tutorials,
           image : {},
           course: {},
-          dbTutorials: []
+          dbTutorials: [],
+          redirectToReferrer: false
         }
     }
 
@@ -68,6 +69,7 @@ async componentDidMount(){
     }
 
 
+    
 
     handleSubmit = async event => {
         event.preventDefault();
@@ -86,6 +88,7 @@ async componentDidMount(){
             tutorials: this.state.dbTutorials
           };
         
+
          
          axios.post('http://localhost:8080/api/courses' ,course)
          .then(response =>{
@@ -94,11 +97,20 @@ async componentDidMount(){
          .catch(error => {
           console.log(error)
          })
+
+         this.setState({ redirectToReferrer: true })
        
       }
     
 
      render(){
+        const { redirectToReferrer } = this.state;
+        if (redirectToReferrer) {
+            return (
+              <Redirect to="/success" />
+            )
+        }
+        else{
         return(
             <form onSubmit={this.handleSubmit}>
 <br/><br/><br/><br/><br/><br/><br/><br/>
@@ -111,7 +123,7 @@ async componentDidMount(){
                 <br/><br/><br/><br/>
                 <div className="tutorials">
                 <Button  className="ui inverted orange button" onClick={this.back}>Back</Button>
-                <Button  className="ui inverted primary button" type="submit">Confirm</Button> 
+                <Button  className="ui inverted primary button" type="submit" >Confirm</Button>
                 </div>
             </div>
             </div>
@@ -121,6 +133,7 @@ async componentDidMount(){
             </form>
         )
      }
+    }
 }
 
 export default Confirmation;

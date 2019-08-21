@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router , Route , Switch } from 'react-router-dom'
 import { Login, Register } from "./components/login/index";
 import { StudentDashboard } from "./components/dashboard/studentDashboard";
 import { CourseDashboard } from "./components/dashboard/courseDashboard";
 import { MainForm } from "./components/courseForm/mainForm"
 import  Tutorial  from "./components/details/tutorial"
+import Success from "./components/courseForm/success"
 const routing = (
     <Router>
       <div>
@@ -16,6 +17,7 @@ const routing = (
         <Route path="/form" component={MainForm} />
         <Route path="/dashboard" component={CourseDashboard} />
         <Route path="/course/:id" component={Tutorial} />
+        <Route path="/success" component={Success} />
       </div>
     </Router>
   )

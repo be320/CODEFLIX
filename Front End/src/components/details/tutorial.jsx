@@ -1,9 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Suspense from 'react'
 import YouTube from 'react-youtube';
 import { List } from 'semantic-ui-react'
 import axios from 'axios';
-import playImg from "../../play.jpg"
+
 
 
 
