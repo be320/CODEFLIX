@@ -10,7 +10,16 @@ import { CourseDashboard } from "./components/dashboard/courseDashboard";
 import { MainForm } from "./components/courseForm/mainForm"
 import  Tutorial  from "./components/details/tutorial"
 import Success from "./components/courseForm/success"
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import rootReducer from "./reducers/rootReducer"
+
+
+const store = createStore(rootReducer)
+
+
 const routing = (
+  <Provider store={store}>
     <Router>
       <div>
         <Route exact path="/" component={App} />
@@ -20,6 +29,7 @@ const routing = (
         <Route path="/success" component={Success} />
       </div>
     </Router>
+    </Provider>
   )
 
 ReactDOM.render(routing, document.getElementById('root'));

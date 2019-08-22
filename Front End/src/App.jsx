@@ -55,17 +55,6 @@ class App extends React.Component {
           />
         </div>
       </div>
-
-      //                                  **************  Create Course Form *********
-      //<MainForm />
-
-
-      //          ********************   Course Dashboard    **************
-     // <CourseDashboard/>
-
-
-      //                    **************   Tutorials  *****************
-      //<Tutorial />
     )
   }
 }

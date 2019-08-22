@@ -63,19 +63,19 @@ return(
     
     return (
       <div className="youtube">
-      <YouTube className="videoList"
+      <YouTube className="video" 
       videoId={videoURL}
       opts={opts}
       
     />
-      <List divided relaxed className="videoList" width='600'>
+      <List divided relaxed className="videoList" width='600'  >
         
-      <h1>Playlist Content</h1>
+     <label> <h1 >Playlist Content</h1> </label>
        {
          
               tuts.map( (tutorial,index) =>    
               (     
-        <List.Item  key = {tutorial['id']} onClick={()=> {changeVideo(tutorial['videoUrl'])}}>
+        <List.Item  key = {tutorial['id']} onClick={()=> {changeVideo(tutorial['videoUrl'])}} >
           <List.Icon name='play circle' size='large' verticalAlign='middle' />
           <List.Content>
             <List.Header as='a'>{index+1}.{tutorial['title']}</List.Header>
