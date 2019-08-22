@@ -48,7 +48,6 @@ showDetails = id => {
 
       if(redirectToReferrer)
       {
-      
         return (
           <Redirect to={`/course/${paramId}` } />
         )

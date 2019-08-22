@@ -8,4 +8,7 @@ import com.example.bahaa.model.Student;
 
 public interface StudentRepository extends JpaRepository<Student, Integer>{
 
+	@Query("FROM Student s WHERE s.email = :email")
+	Student findByEmail(String email);
+	
 }

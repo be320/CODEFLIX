@@ -35,7 +35,7 @@ useEffect(() =>{
     setVideoURL(fetchedTutorials.data[0]['videoUrl'])
   }
   fetchData() 
-  
+   
   
  
 }, [] )

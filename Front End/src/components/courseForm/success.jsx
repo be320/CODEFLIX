@@ -13,8 +13,8 @@ const Success = () => {
                       <div className="content">
                       <label className="headLabel">Congratulations ! Your Playlist is Successfully Uploaded</label>
                       <br/><br/><br/><br/>
-      
-                   <Link to="/dashboard" >   <Button  className="ui inverted primary button" type="button" >WOW</Button>  </Link>
+       
+                   <Link to="/dashboard" >    <Button  className="ui inverted primary button" type="button" >WOW</Button>  </Link>
                   
                   </div>
                   </div>

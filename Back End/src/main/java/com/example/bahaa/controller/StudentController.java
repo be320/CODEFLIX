@@ -45,6 +45,25 @@ public class StudentController {
 		return  studentRepository.findAll();
 		}
 	
+	@PostMapping("/login")
+	@CrossOrigin(origins = "http://localhost:3000")
+	public boolean loginVerified(@RequestBody Student student) {
+		Student fetchedStudent = studentRepository.findByEmail(student.getEmail());
+		System.out.println(fetchedStudent);
+		if(fetchedStudent == null) {
+			System.out.println("Student is null");
+			return false;
+		}
+		String matchedPassword = fetchedStudent.getPassword();
+		if(matchedPassword.equals(student.getPassword()) ) {
+			System.out.println("Student matched");
+			return true;
+		}
+		else {
+			System.out.println("Wrong Login");
+			return false;
+		}
+	}
 	
 	@GetMapping("/students/{id}")
 	@CrossOrigin(origins = "http://localhost:3000")
